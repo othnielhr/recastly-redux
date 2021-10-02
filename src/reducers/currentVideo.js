@@ -5,7 +5,11 @@ var currentVideoReducer = (state = null, action) => {
   /* eslint-disable indent */
   switch (action.type) {
     case 'CHANGE_VIDEO':
-      return action.video;
+      if (action.video) {
+        return action.video;
+      } else {
+        return state;
+      }
     default:
       return state;
   }
